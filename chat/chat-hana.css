@@ -1,0 +1,76 @@
+/* 团务聊天组件 · 独立窗口 v11 —— 与主站主题完全统一
+   删除旧的粉毛玻璃体系（大粉渐变 / 圆泡泡 / 苹果质感与主站割裂）。
+   新方案：窗口背景、头部、气泡全部走 design.css 变量，随主题联动；
+   仅保留窗口布局微调与克制的品牌细节。 */
+
+body.mambo-window {
+  background-color: var(--bg);
+  background-image: var(--paper-noise);
+  background-attachment: fixed;
+}
+
+.mambo-chat .app-head {
+  background: var(--card);
+  border-bottom: 1px solid var(--line);
+  box-shadow: none;
+}
+
+.mambo-chat .app-head .logo {
+  background: var(--primary);
+  color: var(--on-primary);
+  border-radius: 6px;
+  box-shadow: none;
+}
+
+.mambo-chat .app-head .titles h1 {
+  font-family: var(--font-serif);
+  color: var(--text);
+}
+
+.mambo-chat .app-head .titles .status {
+  color: var(--text3);
+}
+
+.mambo-chat .msg.ai .avatar {
+  background: var(--primary);
+  color: var(--on-primary);
+  border: none;
+  box-shadow: none;
+}
+
+.mambo-chat .msg.ai .bubble {
+  background: var(--card-solid);
+  border: 1px solid var(--line);
+  color: var(--text);
+  box-shadow: var(--shadow-sm);
+  border-radius: 10px 10px 10px 3px;
+}
+
+.mambo-chat .msg.user .bubble {
+  background: var(--primary-soft);
+  border: 1px solid var(--primary);
+  color: var(--primary-dark);
+  box-shadow: none;
+  border-radius: 10px 10px 3px 10px;
+}
+
+.mambo-chat .input-bar {
+  background: var(--card);
+  border-top: 1px solid var(--line);
+}
+
+.mambo-chat .input-bar input {
+  background: var(--card);
+  border: 1px solid var(--line);
+  color: var(--text);
+}
+
+.mambo-chat .input-bar input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px var(--primary-soft);
+}
+
+.mambo-chat .quick-suggest .qs {
+  background: var(--card);
+  color: var(--text2);
+}

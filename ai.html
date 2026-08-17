@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>norm</title>
+<link rel="stylesheet" href="design.css">
+<link rel="stylesheet" href="chat/chat.css">
+<link rel="stylesheet" href="chat/chat-hana.css">
+</head>
+<body class="mambo-window">
+<div id="mamboRoot"></div>
+<script>
+/* P0-4 主题统一：继承 design.css 变量，启动时同步主站主题 */
+var tzsTheme = localStorage.getItem("tzs_theme");
+if (tzsTheme) {
+  document.documentElement.setAttribute("data-theme", tzsTheme);
+}
+</script>
+<script src="chat/chat.js"></script>
+<script>
+MB_INIT(document.getElementById('mamboRoot'), { mode: 'window' });
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+/* ═══════════════════════════════════════════
+   数字人集成补丁 — 团支书数字分身
+   追加到 design.css + chat.js
+   模式：团务助手 ⇄ 数字助手
+   ═══════════════════════════════════════════ */
+
+/* ── 模式切换按钮 ── */
+.mode-switch {
+  display: inline-flex;
+  background: var(--line);
+  border-radius: 999px;
+  padding: 2px;
+  gap: 2px;
+}
+.mode-switch button {
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+  border: 0;
+  cursor: pointer;
+  transition: all .2s;
+  background: transparent;
+  color: var(--text2);
+}
+.mode-switch button.active {
+  background: var(--card);
+  color: var(--text);
+  box-shadow: var(--shadow-sm);
+}
+.mode-badge {
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-weight: 600;
+  letter-spacing: .03em;
+}
+.mode-badge.mambo { background: var(--primary-soft); color: var(--primary); }
+.mode-badge.biankuan { background: rgba(124,58,237,.1); color: #7c3aed; }

@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 230" fill="none">
+  <!-- 梅花树枝线绘：细墨枝 + 结节 + 线描五瓣梅 + 花苞（AI 主题下用深紫灰墨色） -->
+  <g stroke="#3B2A3F" stroke-linecap="round" stroke-linejoin="round">
+    <!-- 主枝（自左下向上） -->
+    <path d="M18 226 C40 200 58 178 74 148 C86 126 100 104 120 82 C136 64 158 48 186 38 C200 33 214 31 230 32" stroke-width="3"/>
+    <!-- 主枝结节 -->
+    <path d="M74 148 C70 144 70 138 75 134 M120 82 C115 78 116 72 122 68" stroke-width="1.6" opacity=".7"/>
+    <!-- 侧枝 1（左下） -->
+    <path d="M58 178 C52 160 40 148 26 142" stroke-width="1.8"/>
+    <path d="M66 168 C58 154 46 148 34 146" stroke-width="1.4"/>
+    <!-- 侧枝 2（中左） -->
+    <path d="M100 104 C94 86 84 74 70 68" stroke-width="1.8"/>
+    <path d="M108 94 C104 80 96 72 86 68" stroke-width="1.4"/>
+    <!-- 侧枝 3（右上） -->
+    <path d="M158 48 C168 38 182 32 196 32" stroke-width="1.6"/>
+    <path d="M174 40 C186 34 200 34 212 38" stroke-width="1.3"/>
+    <!-- 细枝梢 -->
+    <path d="M230 32 C238 34 244 38 248 44" stroke-width="1.2"/>
+  </g>
+
+  <!-- 梅花 1（左下侧枝头） -->
+  <g transform="translate(26 142)">
+    <g stroke="#A33A56" stroke-width="1.4">
+      <ellipse cx="0" cy="-8" rx="3.6" ry="5.6"/>
+      <ellipse cx="7.6" cy="-2.5" rx="3.6" ry="5.6" transform="rotate(72 7.6 -2.5)"/>
+      <ellipse cx="4.7" cy="6.5" rx="3.6" ry="5.6" transform="rotate(144 4.7 6.5)"/>
+      <ellipse cx="-4.7" cy="6.5" rx="3.6" ry="5.6" transform="rotate(216 -4.7 6.5)"/>
+      <ellipse cx="-7.6" cy="-2.5" rx="3.6" ry="5.6" transform="rotate(288 -7.6 -2.5)"/>
+    </g>
+    <circle r="1.6" fill="#C44B6B" stroke="none"/>
+    <path d="M0 0 L0 -3 M0 0 L2.6 -1.5 M0 0 L-2.6 -1.5" stroke="#C44B6B" stroke-width=".7"/>
+  </g>
+
+  <!-- 梅花 2（中左） -->
+  <g transform="translate(70 68)">
+    <g stroke="#A33A56" stroke-width="1.4">
+      <ellipse cx="0" cy="-7" rx="3.3" ry="5.2"/>
+      <ellipse cx="6.7" cy="-2.2" rx="3.3" ry="5.2" transform="rotate(72 6.7 -2.2)"/>
+      <ellipse cx="4.1" cy="5.7" rx="3.3" ry="5.2" transform="rotate(144 4.1 5.7)"/>
+      <ellipse cx="-4.1" cy="5.7" rx="3.3" ry="5.2" transform="rotate(216 -4.1 5.7)"/>
+      <ellipse cx="-6.7" cy="-2.2" rx="3.3" ry="5.2" transform="rotate(288 -6.7 -2.2)"/>
+    </g>
+    <circle r="1.5" fill="#C44B6B" stroke="none"/>
+  </g>
+
+  <!-- 梅花 3（右上一） -->
+  <g transform="translate(196 32)">
+    <g stroke="#A33A56" stroke-width="1.4">
+      <ellipse cx="0" cy="-8" rx="3.6" ry="5.6"/>
+      <ellipse cx="7.6" cy="-2.5" rx="3.6" ry="5.6" transform="rotate(72 7.6 -2.5)"/>
+      <ellipse cx="4.7" cy="6.5" rx="3.6" ry="5.6" transform="rotate(144 4.7 6.5)"/>
+      <ellipse cx="-4.7" cy="6.5" rx="3.6" ry="5.6" transform="rotate(216 -4.7 6.5)"/>
+      <ellipse cx="-7.6" cy="-2.5" rx="3.6" ry="5.6" transform="rotate(288 -7.6 -2.5)"/>
+    </g>
+    <circle r="1.6" fill="#C44B6B" stroke="none"/>
+    <path d="M0 0 L0 -3 M0 0 L2.6 -1.5 M0 0 L-2.6 -1.5" stroke="#C44B6B" stroke-width=".7"/>
+  </g>
+
+  <!-- 梅花 4（右上二，含苞半开） -->
+  <g transform="translate(212 38)">
+    <g stroke="#B05A74" stroke-width="1.2" opacity=".9">
+      <ellipse cx="0" cy="-6.5" rx="3" ry="4.8"/>
+      <ellipse cx="6.2" cy="-2" rx="3" ry="4.8" transform="rotate(72 6.2 -2)"/>
+      <ellipse cx="3.8" cy="5.3" rx="3" ry="4.8" transform="rotate(144 3.8 5.3)"/>
+      <ellipse cx="-3.8" cy="5.3" rx="3" ry="4.8" transform="rotate(216 -3.8 5.3)"/>
+      <ellipse cx="-6.2" cy="-2" rx="3" ry="4.8" transform="rotate(288 -6.2 -2)"/>
+    </g>
+    <circle r="1.4" fill="#C44B6B" stroke="none"/>
+  </g>
+
+  <!-- 花苞 1 -->
+  <g transform="translate(34 146)">
+    <path d="M0 4 C-2.4 -2 0.8 -6 4 -8 C3.4 -2 4.6 2 0 4 Z" fill="#E89AA8" stroke="#A33A56" stroke-width="1"/>
+  </g>
+  <!-- 花苞 2 -->
+  <g transform="translate(86 68)">
+    <path d="M0 3.6 C-2.2 -1.8 0.6 -5.4 3.6 -7 C3 -1.8 4 1.8 0 3.6 Z" fill="#E89AA8" stroke="#A33A56" stroke-width="1"/>
+  </g>
+  <!-- 花苞 3（枝头小点） -->
+  <g transform="translate(248 44)">
+    <circle r="2.2" fill="#D47B8B" opacity=".85"/>
+  </g>
+
+  <!-- 嫩芽点 -->
+  <g fill="#6E826B" opacity=".7">
+    <circle cx="120" cy="82" r="1.1"/>
+    <circle cx="158" cy="48" r="1"/>
+    <circle cx="74" cy="148" r="1"/>
+  </g>
+</svg>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>团支书工作台</title>
+<link rel="stylesheet" href="design.css">
+<link rel="stylesheet" href="chat/chat.css">
+<link rel="stylesheet" href="chat/chat-hana.css">
+</head>
+<div id="boot" style="position:fixed;inset:0;z-index:9999;background:var(--card);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px"><div style="font-family:var(--font-serif);font-size:18px;letter-spacing:2px;color:var(--text)">团支书工作台</div><div style="font-size:12px;color:var(--text3)">加载中…</div></div>
+<body data-ai-default>
+<script>try{if(!localStorage.getItem("tzs_theme")){document.documentElement.setAttribute("data-theme","ai");}}catch(e){document.documentElement.setAttribute("data-theme","ai");}</script>
+<div class="app">
+  <!-- 侧边栏（小戴风格：BEM 命名 · 图标+标签 · 244px 统一宽度；旧类名保留以兼容七主题） -->
+  <aside class="sidebar sidebar--xiaodai">
+    <div class="sidebar-logo sidebar__brand">
+      <div class="seal">团</div>
+      <div class="sidebar__brand-text">
+        <h1>团支书工作台</h1>
+        <p>某高校 · 25通信工程X班 · 团支书</p>
+      </div>
+    </div>
+    <div class="sidebar__tag">TZS WORKBENCH · 2026</div>
+    <nav class="sidebar-nav sidebar__nav" id="sidebarNav">
+      <!-- 页面映射（小戴 → 团支书）：总览→工作台总览 · 知识星图→知识图谱 · Wiki层/素材层/书架→知识中心 · 每日热点→活动记录 -->
+      <!-- 内容中心 / 抖音数据：按要求不提供 UI 入口，底层代码保留 -->
+      <div class="nav-item sidebar__nav-item active" data-page="dash" title="工作台总览"><span class="icon sidebar__nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg></span>工作台总览</div>
+      <div class="nav-group-title sidebar__group" data-group="tuangwu" onclick="NAVT(this)">团务中心</div>
+      <div class="nav-item sidebar__nav-item" data-page="members" title="团员台账"><span class="icon sidebar__nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg></span>团员台账<span class="badge-count sidebar__badge" id="memberCount">0</span></div>
+      <div class="nav-item sidebar__nav-item" data-page="meetings" title="三会两制一课"><span class="icon sidebar__nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/><path d="M10 14l2 2 4-4"/></svg></span>三会两制一课</div>
+      <div class="nav-item sidebar__nav-item" data-page="awards" title="荣誉实践（评优推优 · 荣誉墙 · 活动实践）"><span class="icon sidebar__nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><path d="M8.2 11.8 12 21l3.8-9.2L21 12l-5.2-3.8L12 3 8.2 8.2 3 12l5.2 3.2z" fill="currentColor" stroke="none"/></svg></span>荣誉实践</div>
+      <div class="nav-item sidebar__nav-item" data-page="classfund" title="班费收支 · 考勤记录"><span class="icon sidebar__nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M8 12h8M8 16h5M16 3v4M8 3v4"/></svg></span>班费考勤</div>
+      <div class="nav-group-title sidebar__group" data-group="gongju" onclick="NAVT(this)">工具</div>
+      <div class="nav-item sidebar__nav-item" data-page="groups" title="工作群情报"><span class="icon sidebar__nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-8 8H4l2.5-2.5A8 8 0 1 1 21 12z"/></svg></span>工作群情报</div>
+      <div class="nav-item sidebar__nav-item" data-page="ai" title="norm"><span class="icon sidebar__nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M9 9h6v6H9z" fill="currentColor" stroke="none"/><path d="M12 8v-3M12 19v-3M8 12H5M19 12h-3"/></svg></span>norm</div>
+      <div class="nav-group-title sidebar__group" data-group="zhishi" onclick="NAVT(this)">知识</div>
+      <div class="nav-item sidebar__nav-item" data-page="knowledge" title="知识中心"><span class="icon sidebar__nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>知识中心<span class="badge-count sidebar__badge" id="noteCount">0</span></div>
+      <div class="nav-item" data-page="wiki" title="Wiki层（个人AI工作台）"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>Wiki层</div>
+      <div class="nav-item" data-page="materials" title="素材层（个人AI工作台）"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 8h10M7 12h10M7 16h6"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg></span>素材层</div>
+      <div class="nav-item" data-page="books" title="书架（个人AI工作台）"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5v15z"/><path d="M20 17v5H6.5a2.5 2.5 0 0 1 0-5"/></svg></span>书架</div>
+      <div class="nav-item" data-page="daily" title="每日热点（个人AI工作台）"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 3M12 2v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17.1 7l2.1-2.1"/><circle cx="12" cy="14" r="6"/></svg></span>每日热点</div>
+      <div class="nav-item" data-page="social" title="社媒洞察（个人AI工作台）"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-8 8H4l2.5-2.5A8 8 0 1 1 21 12z"/></svg></span>社媒洞察</div>
+      <div class="nav-item" data-page="ideas" title="灵感库（个人AI工作台）"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3"/></svg></span>灵感库</div>
+      <div class="nav-item" data-page="content" title="内容中心（个人AI工作台）"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2 5 5.5 1-4 3.7 1 5.6-4.5-2.6L7.5 18l1-5.6-4-3.7 5.5-1z"/></svg></span>内容中心</div>
+    </nav>
+    <div class="sidebar-footer sidebar__footer">
+      数据本地存储 · 支持导出备份
+      <div style="margin-top:8px"><button class="btn btn-sm sidebar__launch" title="Ctrl+Shift+T 快速唤起" onclick="openAiWindow()">新窗口打开norm Ctrl+Shift+T</button></div>
+    </div>
+  </aside>
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+
+  <!-- 主区域 -->
+  <div class="main">
+    <div class="topbar">
+      <button class="btn-hamburger" id="btnHamburger" onclick="toggleSidebar()" aria-label="菜单">☰</button>
+      <h2 id="pageTitle">工作台总览</h2>
+      <span class="date" id="todayDate"></span><button class="btn btn-sm" title="随机点名一位同学" onclick="R()">点名</button><button class="btn btn-sm" title="切换宣纸/墨夜主题" onclick="C()">主题</button>
+      <div class="spacer"></div>
+      <div style="position:relative">
+        <input id="gsInput" placeholder="全局搜索 学生/会议/待办/群…" onfocus="this.style.width='340px'" onblur="this.style.width='220px';setTimeout(function(){var b=document.querySelector('#gsBox');if(b)b.style.display='none';},150)" oninput="GS(this.value)" onkeydown="if(event.key==='Escape'){this.value='';GS('')}" style="width:220px;padding:6px 10px;border:1px solid var(--line);border-radius:8px;font-size:12px;background:var(--card);color:var(--text);transition:width .22s ease,box-shadow .22s ease">
+        <div id="gsBox" style="display:none;position:absolute;top:calc(100% + 6px);right:0;width:340px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow-lg);z-index:999;max-height:70vh;overflow-y:auto"></div>
+      </div>
+      <div style="position:relative">
+        <button class="btn btn-sm" id="moreBtn" title="更多" onclick="TM(event)">更多 ▾</button>
+        <div id="moreBox" style="display:none;position:absolute;top:calc(100% + 6px);right:0;min-width:132px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow-lg);z-index:999;padding:6px">
+          <div style="padding:8px 12px;font-size:12px;cursor:pointer;border-radius:6px;display:flex;align-items:center;gap:6px" onclick="exportData();document.getElementById('moreBox').style.display='none'">📦 导出备份</div>
+          <div style="padding:8px 12px;font-size:12px;cursor:pointer;border-radius:6px;display:flex;align-items:center;gap:6px" onclick="importData();document.getElementById('moreBox').style.display='none'">📥 恢复备份</div>
+          <div style="padding:8px 12px;font-size:12px;cursor:pointer;border-radius:6px;display:flex;align-items:center;gap:6px" onclick="C();document.getElementById('moreBox').style.display='none'">🎨 切换主题</div>
+          <div style="padding:8px 12px;font-size:12px;cursor:pointer;border-radius:6px;display:flex;align-items:center;gap:6px" onclick="FONTADJ(10);document.getElementById('moreBox').style.display='none'">🔠 字号加大</div>
+          <div style="padding:8px 12px;font-size:12px;cursor:pointer;border-radius:6px;display:flex;align-items:center;gap:6px" onclick="FONTADJ(-10);document.getElementById('moreBox').style.display='none'">🔠 字号减小</div>
+          <div style="padding:8px 12px;font-size:12px;cursor:pointer;border-radius:6px;display:flex;align-items:center;gap:6px" onclick="FS();document.getElementById('moreBox').style.display='none'">⛶ 全屏模式</div>
+          <div style="padding:8px 12px;font-size:12px;cursor:pointer;border-radius:6px;display:flex;align-items:center;gap:6px" onclick="GENR();document.getElementById('moreBox').style.display='none'">📄 生成述职报告</div>
+        </div>
+      </div>
+    </div>
+    <div class="content" id="content"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<button id="backTop" class="backtop" onclick="BT()" title="回到顶部">↑</button>
+<input type="file" id="importFile" accept=".json" style="display:none" onchange="handleImport(this)">
+<input type="file" id="excelFile" accept=".xlsx,.xls" style="display:none" onchange="handleExcelImport(this)">
+
+
+<script src="api.js"></script>
+<script src="rules.js"></script>
+<script src="grp_data.js"></script>
+<script src="lib/d3-dispatch.min.js"></script>
+<script src="lib/d3-timer.min.js"></script>
+<script src="lib/d3-quadtree.min.js"></script>
+<script src="lib/d3-force.min.js"></script>
+<script src="lib/d3-color.min.js"></script>
+<script src="lib/d3-ease.min.js"></script>
+<script src="lib/d3-interpolate.min.js"></script>
+<script src="lib/d3-selection.min.js"></script>
+<script src="lib/d3-drag.min.js"></script>
+<script src="lib/d3-transition.min.js"></script>
+<script src="lib/d3-zoom.min.js"></script>
+<script src="core/utils.js"></script>
+<script src="core/store.js"></script>
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
+<script src="modules/notice.js"></script>
+<script src="modules/fund.js"></script>
+<script src="modules/meetings.js"></script>
+<script src="modules/dashboard.js"></script>
+<script src="modules/members.js"></script>
+<script src="modules/ai.js"></script>
+<script src="modules/graph.js"></script>
+<script src="modules/insight.js"></script>
+<script src="modules/knowledge.js"></script>
+<script src="modules/journey.js"></script>
+<script src="modules/hermes.js"></script>
+<script src="modules/tabs.js"></script>
+<script src="gsap-animations.js"></script>
+<script src="app.js"></script>
+<script src="modules/zoom.js"></script>
+<script src="chat/chat.js"></script></body>
+</html>

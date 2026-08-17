@@ -1,0 +1,16 @@
+{
+  "name": "团务数字助手",
+  "short_name": "团支书",
+  "description": "团务数字助手——聊天、团务、知识管理",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fafafa",
+  "theme_color": "#7c3aed",
+  "icons": [
+    {
+      "src": "/workbench-mark.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
